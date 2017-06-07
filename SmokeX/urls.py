@@ -13,11 +13,13 @@ from django.views.static import serve
 admin.autodiscover()
 
 urlpatterns = [
+    url(r'^', include('landing.urls')),
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
 ]
 
 urlpatterns += i18n_patterns(
+    url(r'^', include('landing.urls')),
     url(r'^admin/', include(admin.site.urls)),  # NOQA
     url(r'^', include('cms.urls')),
 )

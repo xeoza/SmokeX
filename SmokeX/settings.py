@@ -28,7 +28,7 @@ SECRET_KEY = '51#ex6v33^f!%608v%u37!@c@eiz(2$2mvnc+m0cc7kp_-^l=q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['194.58.123.162']
+ALLOWED_HOSTS = ['194.58.123.162', '127.0.0.1']
 
 
 # Application definition
@@ -148,7 +148,8 @@ INSTALLED_APPS = (
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
-    'SmokeX'
+    'SmokeX',
+    'landing'
 )
 
 LANGUAGES = (
@@ -180,7 +181,8 @@ CMS_TEMPLATES = (
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right'),
     ('contacts.html', 'Contacts'),
-    ('akutepov.html', 'Main')
+    ('akutepov.html', 'Main'),
+    ('landing.html', 'landing')
 )
 
 CMS_PERMISSION = True
