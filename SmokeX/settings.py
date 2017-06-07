@@ -55,7 +55,7 @@ WSGI_APPLICATION = 'SmokeX.wsgi.application'
 
 LANGUAGE_CODE = 'en'
 
-TIME_ZONE = 'Etc/UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -179,6 +179,8 @@ CMS_TEMPLATES = (
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right')
+    ('contacts.html', 'Contacts'),
+    ('akutepov.html', 'Main')
 )
 
 CMS_PERMISSION = True
