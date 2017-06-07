@@ -6,7 +6,7 @@ class Subscriber(models.Model):
     name = models.CharField(max_length=128)
 
     def __str__(self):
-        return "Пользователь %s %s" % (self.name, self.email,)
+        return "User %s %s" % (self.name, self.email,)
 
     class Meta:
         verbose_name = 'MySubscriber'
