@@ -28,7 +28,7 @@ SECRET_KEY = '51#ex6v33^f!%608v%u37!@c@eiz(2$2mvnc+m0cc7kp_-^l=q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['194.58.123.162', '127.0.0.1']
+ALLOWED_HOSTS = ['smokex.ru', '194.58.123.162', '127.0.0.1']
 
 
 # Application definition
@@ -70,10 +70,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+STATIC_ROOT = os.path.join(DATA_DIR, 'SmokeX' ,'static/') #Create /webapps/smokex/SmokeX/SmokeX/SmokeX/static
+
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'SmokeX', 'static'),
+    os.path.join(BASE_DIR,'static/'),
 )
 SITE_ID = 1
 
