@@ -33,16 +33,22 @@
     <!-- Bootstrap-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
     <!-- Custom styles -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <link rel='stylesheet prefetch' href='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/css/demo.css'>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+  
 </head>
 
 <body>
+
 {% cms_toolbar %}
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <!--nav-- class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
+            <!--div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Меню</span>
                     Меню <i class="fa fa-bars"></i>
@@ -51,40 +57,78 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!--div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     {% show_menu 0 100 100 100 %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-        </div>
+        <!--/div>
         <!-- /.container -->
-    </nav>
+    <!--nav-->
+	<div id="large-header" class="large-header">
+	<canvas id="demo-canvas"></canvas>
+            <!--h1 class="main-title">Danya <span class="thin">IU7-23</span></h1-->
+            <!--div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2"!-->
+                    <div class="main-title">
+                        <div class="container top-container">
+                        <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                        <h1 class="title-large2">Наш магазин скоро откроется!<br>
+                                            Оставляйте Ваш email в форме ниже</h1>
+                                        <div>
+                                            <form action="" method="post" class="form-inline text-center">{% csrf_token %}
+                                                <div class="form-group">
+                                                    <label class="title">Ваш email: </label>
+                                                    <input name="{{ form.email.name }}" class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="title">Ваше имя: </label>
+                                                    <input name="{{ form.name.name }}" class="form-control">
+                                                </div>
+                                                <button type="submit"  class="btn btn-primary btn-orange">Отправить</button>
+                                            </form>
 
-    <div class="general-container">
-        <div class="container top-container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h1 class="title">Наш магазин скоро откроется!<br>
-                    Оставляйте Ваш email в форме ниже</h1>
-                    <div>
-                        <form action="" method="post" class="form-inline text-center">{% csrf_token %}
-                         <div class="form-group">
-                             <label>Ваш email: </label>
-                             <input name="{{ form.email.name }}" class="form-control">
-                         </div>
-                         <div class="form-group">
-                             <label>Ваше имя: </label>
-                             <input name="{{ form.name.name }}" class="form-control">
-                         </div>
-                         <button type="submit" class="btn btn-primary btn-orange">Отправить</button>
-                        </form>
-
+                                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                        </div>
+                        </div>
+                    </div>
     </div>
+
+
+        <!--div class="general-container">
+            <div class="container top-container">
+                 <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                                <h1 class="title">Наш магазин скоро откроется!<br>
+                                Оставляйте Ваш email в форме ниже</h1>
+                            <div>
+                                <form action="" method="post" class="form-inline text-center">{% csrf_token %}
+                                    <div class="form-group">
+                                        <label>Ваш email: </label>
+                                        <input name="{{ form.email.name }}" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ваше имя: </label>
+                                        <input name="{{ form.name.name }}" class="form-control">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-orange">Отправить</button>
+                                </form>
+
+                            </div>
+                        </div>
+                 </div>
+            </div>
+        </div-->
+
+	<script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/EasePack.min.js'></script>
+	<script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/rAF.js'></script>
+	<script src='https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/js/TweenLite.min.js'></script>
+
+    <script src="{{ STATIC_URL }}js/index.js"></script>
 
     <!-- jQuery -->
     <script src="{{ STATIC_URL }}js/jquery.min.js"></script>

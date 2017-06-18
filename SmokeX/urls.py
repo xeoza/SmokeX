@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, print_function, unicode_literals
-
+from django.views.generic import RedirectView
 from cms.sitemaps import CMSSitemap
 from django.conf import settings
 from django.conf.urls import include, url
@@ -14,6 +14,7 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^', include('landing.urls')),
+    url(r'^favicon\.ico$', RedirectView.as_view(url='/favicon.ico', permanent=True)),
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
 ]
