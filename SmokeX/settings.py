@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '51#ex6v33^f!%608v%u37!@c@eiz(2$2mvnc+m0cc7kp_-^l=q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['www.smokex.ru', 'smokex.ru', '194.58.123.162', '127.0.0.1']
@@ -93,6 +93,9 @@ TEMPLATES = [
     'django.template.context_processors.i18n',
     'django.template.context_processors.debug',
     'django.template.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+    'cart.context_processors.cart',
     'django.template.context_processors.media',
     'django.template.context_processors.csrf',
     'django.template.context_processors.tz',
@@ -153,8 +156,14 @@ INSTALLED_APPS = (
     'djangocms_googlemap',
     'djangocms_video',
     'SmokeX',
-    'landing'
+    'shop',
+    'landing',
+    'cart',
+    'orders',
 )
+
+#Session ID
+CART_SESSION_ID = 'cart'
 
 LANGUAGES = (
     ## Customize this
