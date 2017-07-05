@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'^favicon\.ico$', RedirectView.as_view(url='../favicon.ico', permanent=True)),
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
+    
 ]
 
 urlpatterns += i18n_patterns(

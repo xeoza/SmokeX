@@ -1,86 +1,106 @@
-html, body{
-    height: 100%;
-    max-height: 100%;
-    font-family: 'Roboto', sans-serif;
+body{
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
 }
-
-.top-container{
-    padding-top: 10%;
-    height: 100%;
-}
-
-.general-container{
-    background-image: url("https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg");
-    height: 100%;
-}
-
-.general-container form{
-    margin-top: 30px;
-}
-
-.general-container form label{
-    font-weight: 100;
-    color: white;
-}
-
-.btn-orange{
-    background-color: #e8643e;
-    border: none;
-}
-
-.btn-orange:hover{
-    background-color: #dc5129;
-    border: none;
-}
-
-.title{
-    text-align: center;
-    color: white;
-    font-weight: 100;
-    line-height: 50px;
-    font-size: 14pt;
-}
-.title-large2{
-    text-align: center;
-    color: white;
-    font-weight: 100;
-    line-height: 50px;
-    font-size: 18pt;
-}
-.large-header {
-  position: relative;
-  width: 100%;
-  background: #333;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center center;
-  z-index: 1;
-}
-#large-header {
-  background-image: url("https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg");
-}
-.main-title {
-  position: absolute;
-  margin: 0 auto;
-  padding: 0;
-  color: #f9f1e9;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
-}
-.demo-1 .main-title {
+.top{
+  padding: 20px 0;
+  font-size: 25px;
+  font-weight: 600;
   text-transform: uppercase;
-  font-size: 30em;
-  letter-spacing: 0.1em;
 }
-.main-title .thin {
-  font-weight: 200;
+.top-bl{
+  background: #bebebe;
+  padding: 15px;
 }
-@media only screen and (max-width: 768px) {
-    .demo-1 .main-title {
-        font-size: 3em;
-    }
+.top-bl .cart{
+  float: right;
 }
-
+#sidebar ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+#sidebar ul li{
+  padding: 5px 10px;
+}
+#sidebar ul li.selected{
+  background: #0095ff;
+  color: white;
+  border-radius: 3px;
+}
+#sidebar ul li.selected a{
+  color: white;
+}
+.items{
+  margin-top: 20px;
+}
+.item{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.item a img{
+  margin-bottom: 15px;
+}
+.product-detail{
+  margin-top: 40px;
+}
+.price{
+  font-weight: 600;
+  font-size: 20px;
+}
+.product-detail h2{
+  font-size: 18px;
+}
+form.add{
+  margin-bottom: 10px;
+}
+form.add label{
+  margin-right: 10px;
+}
+#id_quantity{
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+form.add input[type="submit"]{
+  background: #2a6496;
+  border-radius: 3px;
+  border: 0;
+  padding: 5px 10px;
+  color: white;
+}
+.table-cart{
+  width: 100%;
+  margin: 10px 0;
+}
+.cart-img{
+  width: 10%;
+}
+th, td{
+  padding: 5px;
+}
+thead{
+  background: #2a6496;
+  color: white;
+}
+.btn{
+  background: #2a6496;
+  color: white;
+}
+.btn-light{
+  background: #808080;
+}
+.order-info h2{
+  margin-bottom: 20px;
+}
+.order-form{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.order-form label{
+  display: block;
+}
+.order-form input{
+  width: 100%;
+  padding: 5px 10px;
+}
