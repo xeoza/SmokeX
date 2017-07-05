@@ -10,4 +10,4 @@ class Subscriber(models.Model):
 
     class Meta:
         verbose_name = 'MySubscriber'
-        verbose_name_plural = 'A lot of Subscribers'
+        verbose_name_plural = 'Заглушка'

@@ -8,9 +8,9 @@ class CategoryAdmin(admin.ModelAdmin):
 # Модель товара
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'price', 'stock', 'available', 'created', 'updated']
+    list_display = ['name', 'slug', 'available', 'created', 'updated']
     list_filter = ['available', 'created', 'updated']
-    list_editable = ['price', 'stock', 'available'] #list_editable - позволяет задать те поля, которые можно будет редактировать на странице со списком товаров, любой из в этом наборе должен присутствовать и в list_display
+    list_editable = ['available'] #list_editable - позволяет задать те поля, которые можно будет редактировать на странице со списком товаров, любой из в этом наборе должен присутствовать и в list_display
     prepopulated_fields = {'slug': ('name', )}
 
 admin.site.register(Category, CategoryAdmin)

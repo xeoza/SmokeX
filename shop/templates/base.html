@@ -12,9 +12,9 @@
 <body>
   <section id="header">
     <div class="top container">
-      <a href="#"><img src="https://pp.userapi.com/c637422/v637422693/3e2c4/Q2vbQwaJ3qk.jpg" > </a>
+      <a href="{% url "shop:ProductList" %}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Umk_logo.svg/300px-Umk_logo.svg.png"</a>
     </div>
-    <div class="top-bl">
+    <!--div class="top-bl">
       <div class="container">
             <div class="cart">
                 {% with total_items=cart|length %}
@@ -29,7 +29,7 @@
                 {% endwith %}
             </div>
       </div>
-    </div>
+    </-div-->
   </section>
   <section id="content row" class="container">
     {% block content %}{% endblock %}

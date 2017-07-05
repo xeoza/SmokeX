@@ -159,7 +159,6 @@ INSTALLED_APPS = (
     'shop',
     'landing',
     'cart',
-    'orders',
 )
 
 #Session ID
