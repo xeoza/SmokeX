@@ -160,6 +160,8 @@ INSTALLED_APPS = (
     'landing',
     'cart',
     'orders',
+    'paypal.standard.ipn',
+    'payment',
 )
 
 #Session ID
@@ -226,3 +228,8 @@ THUMBNAIL_PROCESSORS = (
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Paypal
+
+PAYPAL_RECEIVER_EMAIL = 'xeoza@ya.ru'
+PAYPAL_TEST = True

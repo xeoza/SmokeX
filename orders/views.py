@@ -1,9 +1,9 @@
-from django.shortcuts import render
 from .models import OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart
 from .tasks import OrderCreated
-
+from django.shortcuts import render, redirect
+from django.core.urlresolvers import reverse
 
 def OrderCreate(request):
     cart = Cart(request)
@@ -18,7 +18,9 @@ def OrderCreate(request):
             cart.clear()
             # Асинхронная отправка сообщения
             OrderCreated(order.id)
-            return render(request, 'orders/order/created.html', {'order': order})
+            request.session['order_id'] = order.id
+            return redirect(reverse('payment:process'))
+           # return render(request, 'orders/order/created.html', {'order': order})
 
     form = OrderCreateForm()
     return render(request, 'orders/order/create.html', {'cart': cart,

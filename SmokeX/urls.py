@@ -16,7 +16,9 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^order/', include('orders.urls', namespace='orders')),
+    url(r'^payment/', include('payment.urls', namespace='payment')),
     url(r'^', include('shop.urls', namespace='shop')),
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
     url(r'^favicon\.ico$', RedirectView.as_view(url='../favicon.ico', permanent=True)),
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
