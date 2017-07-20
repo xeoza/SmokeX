@@ -4,6 +4,14 @@ from cart.cart import Cart
 from .tasks import OrderCreated
 from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
+from django.shortcuts import render, get_object_or_404
+from .models import OrderItem, Order
+from django.contrib.admin.views.decorators import staff_member_required
+
+@staff_member_required
+def AdminOrderDetail(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    return render(request, 'admin/orders/order/detail.html', {'order': order})
 
 def OrderCreate(request):
     cart = Cart(request)
