@@ -13,8 +13,8 @@
         <th>Продукт</th>
         <th>Количество</th>
         <th>Удалить</th>
-        <th>Полная цена</th>
         <th>Цена</th>
+        <th>Полная цена</th>
       </tr>
     </thead>
     <tbody>
@@ -28,12 +28,12 @@
             </td>
             <td>{{ product.name }}</td>
             <td>
-            <form action="{% url "cart:CartAdd" product.id %}" method="post" class="add">
+              <form action="{% url "cart:CartAdd" product.id %}" method="post" class="add">
                 {{ item.update_quantity_form.quantity }}
                 {{ item.update_quantity_form.update }}
                 {% csrf_token %}
                 <input type="submit" value="Обновить">
-            </form>
+              </form>
             </td>
             <td><a href="{% url "cart:CartRemove" product.id %}">Удалить</a></td>
             <td class="num">{{ item.price }} руб.</td>
@@ -41,13 +41,33 @@
           </tr>
         {% endwith %}
       {% endfor %}
+        {% if cart.cupon %}
+          <tr class="subtotal">
+            <td>Сумма без скидки</td>
+            <td colspan="4"></td>
+            <td>{{ cart.get_total_price }}</td>
+          </tr>
+          <tr>
+            <td>
+              "{{ cart.cupon.code }}" купон на ({{ cart.cupon.discount }} % ниже)
+            </td>
+            <td colspan="4"></td>
+            <td class="num discount">- {{ cart.get_discount|floatformat:"2" }} руб.</td>
+          </tr>
+        {% endif %}
         <tr class="total">
-          <td>Total</td>
+          <td>Всего</td>
           <td colspan="4"></td>
-          <td class="num">{{ cart.get_total_price }} руб.</td>
+          <td class="num">{{ cart.get_total_price_after_discount|floatformat:"2" }} руб.</td>
         </tr>
     </tbody>
   </table>
+  <p>Применить купон</p>
+  <form action="{% url "cupon:apply" %}" method="post" class="add">
+    {% csrf_token %}
+    {{ cupon_apply_form }}
+    <input type="submit" value="Обновить">
+  </form>
   <p class="text-right">
     <a href="{% url "shop:ProductList"%}" class="btn btn-light">Продолжить Шопинг</a>
     <a href="{% url "orders:OrderCreate" %}" class="btn">Оформить заказ</a>

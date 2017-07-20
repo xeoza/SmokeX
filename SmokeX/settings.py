@@ -162,6 +162,7 @@ INSTALLED_APPS = (
     'orders',
     'paypal.standard.ipn',
     'payment',
+    'cupons',
 )
 
 #Session ID
